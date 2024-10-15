@@ -1,11 +1,18 @@
 import React from 'react';
-import ItemsList from './components/ItemsList';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import AddItem from './components/AddItem';
+import UpdateItem from './components/UpdateItem';
 
 function App() {
   return (
-    <div className="App">
-      <ItemsList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/add" element={<AddItem />} />
+        <Route path="/update/:id" element={<UpdateItem />} />
+      </Routes>
+    </Router>
   );
 }
 
